@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="0.简介AWK 是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。gawk 是 GNU Project 的 awk开">
+<meta name="description" content="0.简介awk是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。gawk 是 GNU Project 的 awk开源">
 <meta name="keywords" content="gawk,linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gawk学习笔记">
 <meta property="og:url" content="https://chenfw2017.github.io/2018/08/17/gawk/index.html">
 <meta property="og:site_name" content="小陈陈的博客">
-<meta property="og:description" content="0.简介AWK 是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。gawk 是 GNU Project 的 awk开">
+<meta property="og:description" content="0.简介awk是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。gawk 是 GNU Project 的 awk开源">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-17T08:17:20.682Z">
+<meta property="og:updated_time" content="2018-08-20T07:01:50.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gawk学习笔记">
-<meta name="twitter:description" content="0.简介AWK 是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。gawk 是 GNU Project 的 awk开">
+<meta name="twitter:description" content="0.简介awk是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。gawk 是 GNU Project 的 awk开源">
 
 
 
@@ -310,11 +310,116 @@
       
 
       
-        <h2 id="0-简介"><a href="#0-简介" class="headerlink" title="0.简介"></a>0.简介</h2><p><em>AWK</em> 是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。<br>awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。<br>gawk 是 GNU Project 的 awk开源的实现版本。<br><a href="https://www.gnu.org/software/gawk/manual/gawk.html" target="_blank" rel="noopener">gawk官方文档</a></p>
+        <h2 id="0-简介"><a href="#0-简介" class="headerlink" title="0.简介"></a>0.简介</h2><p>awk是三个主要作者的姓的首字母缩写：Drs. A. Aho、P. Weinberger 和 B. Kernighan。awk是命令行工具，更是一种解释性语言，awk的代码不需要进行编译，运行时将代码脚本传递给awk解释器。awk语言使用类似 C 语言的语法，包括控制语句和字符串函数，如 printf 和 sprintf，基本上是相同的。gawk 是 GNU Project 的 awk开源的实现版本。</p>
 <h2 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1.基本概念"></a>1.基本概念</h2><ul>
 <li>记录(Record):<br>由<em>记录分隔符</em> 分隔，记录分隔符<code>RS</code> 默认为换行符，所以默认一条记录就是一行。整个记录用$0表示</li>
 <li>字段(Field)<br>将每个记录进一步分解为称作_字段_ 的单独的块。默认的<em>字段分隔符</em><code>FS</code> 是任意数量的空白字符，包括制表符和空格字符。字段可以用$1,$2…表示</li>
-<li>指令（规则）<br>一条指令语法：<br><code>/pattern/{action}</code> 实际上是 <code>$0 ~/pattern/{action}</code>的简写<br>只有前半部分的<code>pattern</code>为真时，<code>action</code>才会执行.<h4 id="BEGIN-和-END-模式"><a href="#BEGIN-和-END-模式" class="headerlink" title="BEGIN 和 END 模式"></a>BEGIN 和 END 模式</h4>AWK 包含两种特殊的模式：<code>BEGIN</code> 和 <code>END</code>。<br><code>BEGIN</code> 模式指定了在处理任何记录之前需要执行的操作：<br><code>BEGIN {action}</code><br><code>END</code> 模式指定在处理了所有记录之后需要执行的操作：<br><code>END {action}</code></li>
+<li>语法规则<br><code>/pattern/{action}</code> 实际上是 <code>$0 ~/pattern/{action}</code>的简写,只有前半部分的判断<code>pattern</code>的结果为真时，<code>action</code>才会执行. <code>~</code>是关系操作符，表示匹配。<code>!~</code>为不匹配。</li>
+<li>BEGIN 和 END 模式<br>AWK 包含两种特殊的模式：<code>BEGIN</code> 和 <code>END</code>。<br><code>BEGIN</code> 模式指定了在处理任何记录之前需要执行的操作：<br><code>BEGIN{action}</code><br><code>END</code> 模式指定在处理了所有记录之后需要执行的操作：<br><code>END{action}</code></li>
+</ul>
+<h2 id="2-工作原理"><a href="#2-工作原理" class="headerlink" title="2.工作原理"></a>2.工作原理</h2><p>第一步，执行<code>BEGIN{action}</code>。<br>第二步，从文件或stdin读取一行，执行<code>/pattern/{action}</code> 。重复执行这步直到最后一行。<br>第三步，执行<code>END{action}</code></p>
+<h2 id="3-如何执行"><a href="#3-如何执行" class="headerlink" title="3.如何执行"></a>3.如何执行</h2><ul>
+<li>1.命令行直接运行：<code>gawk -opt &#39;/pattern/{action}&#39; file</code> 适合较短的awk程序</li>
+<li>2.先编写gawk代码，保存到文件，如test.awk,再在命令行执行：<br><code>gawk -f test.awk file1,file2</code></li>
+<li>3.把gawk命令   <code>gawk &#39;/pattern/{action}&#39;</code> 写进脚本文件 run.awk<br>再给该文件加执行权限：<code>chmod +x run.awk</code><br>最后直接运行脚本文件：<code>./run.awk file</code></li>
+</ul>
+<h2 id="4-常用语句，内建变量，内建函数"><a href="#4-常用语句，内建变量，内建函数" class="headerlink" title="4.常用语句，内建变量，内建函数"></a>4.常用语句，内建变量，内建函数</h2><ul>
+<li>action中常用语句</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exit</td>
+<td>停止程序的执行，并且退出。</td>
+</tr>
+<tr>
+<td>next</td>
+<td>停止处理当前记录，并且前进到下一条记录。</td>
+</tr>
+<tr>
+<td>nextfile</td>
+<td>停止处理当前文件，并且前进到下一个文件。</td>
+</tr>
+<tr>
+<td>print</td>
+<td>打印使用引号括起来的文本、记录、字段和变量。（默认打印出当前整行记录。）</td>
+</tr>
+<tr>
+<td>printf</td>
+<td>打印格式化文本，类似于它的 C 语言对等成分，但必须指定结尾的换行。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>常用的gawk内建变量</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NF</td>
+<td>每个记录的字段个数。</td>
+</tr>
+<tr>
+<td>NR</td>
+<td>当前的记录个数。 读入多个文件时，NR会一直累计。</td>
+</tr>
+<tr>
+<td>FNR</td>
+<td>每读到一个新的文件，FNR从0开始累计。</td>
+</tr>
+<tr>
+<td>FS</td>
+<td>字段分隔符。</td>
+</tr>
+<tr>
+<td>RS</td>
+<td>记录分隔符。</td>
+</tr>
+<tr>
+<td>OFS</td>
+<td>输出字段分隔符。</td>
+</tr>
+<tr>
+<td>ORS</td>
+<td>输出记录分隔符。</td>
+</tr>
+<tr>
+<td>FILENAME</td>
+<td>所读取的输入文件的名称。</td>
+</tr>
+<tr>
+<td>IGNORECASE</td>
+<td>当 IGNORECASE 设置为非空值，GAWK 将忽略模式匹配中的大小写。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>常用内建函数<br>gawk内建函数包括算术函数和字符串函数，还有一些IO函数.<br><code>length(s)</code> 返回字符串长度，无参数返回$0长度<br><code>split(string,array,[sep])</code> 分割字符串到数组中,返回元素的个数，未指定<code>sep</code>，使用<code>FS</code><br><code>sub(regex,s,t)</code> 在字符串t中，用s替换regex的首次匹配，成功返回1，否则返回0<br><code>match(s,regex)</code> 如果regex在s中出现，则返回出现的起始位置，没有出现返回0。并会设置<code>RSTART</code> <code>RLENGTH</code>的值。<br><code>system(command)</code> 执行系统命令</li>
+</ul>
+<h2 id="5-实例"><a href="#5-实例" class="headerlink" title="5.实例"></a>5.实例</h2><ul>
+<li>只输出第10行 <code>gawk &#39;NR==10{print $0}&#39; file</code></li>
+<li>统计词频  <code>gawk &#39;{for(i=1;i&lt;=NF;i++){count[$i]++;}} END {for(i in count){print i,count[i]}}&#39; file</code></li>
+<li>计算行数 <code>gawk &#39;END{print NR}&#39; file</code></li>
+<li>打印匹配正则表达式的行 （模拟grep）  <code>gawk &#39;/regex/ file&#39;</code></li>
+</ul>
+<h2 id="6-参考资料"><a href="#6-参考资料" class="headerlink" title="6.参考资料"></a>6.参考资料</h2><ul>
+<li><a href="https://www.gnu.org/software/gawk/manual/gawk.html" target="_blank" rel="noopener">gawk官方文档</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/education/aix/au-gawk/" target="_blank" rel="noopener">GAWK 入门：AWK 语言基础</a></li>
+<li><a href="http://www.cnblogs.com/qieerbushejinshikelou/p/3420519.html" target="_blank" rel="noopener">【译】 AWK教程指南</a></li>
+<li><a href="http://bbs.bathome.net/viewthread.php?tid=24318&amp;highlight=gawk" target="_blank" rel="noopener">gawk学习笔记</a></li>
+<li>《sed与awk》 第三版 Dale Dougherty &amp; Arnold Robbins 著 张旭东 等译。</li>
 </ul>
 
       
@@ -477,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-简介"><span class="nav-number">1.</span> <span class="nav-text">0.简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-基本概念"><span class="nav-number">2.</span> <span class="nav-text">1.基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BEGIN-和-END-模式"><span class="nav-number">2.0.1.</span> <span class="nav-text">BEGIN 和 END 模式</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-简介"><span class="nav-number">1.</span> <span class="nav-text">0.简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-基本概念"><span class="nav-number">2.</span> <span class="nav-text">1.基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-工作原理"><span class="nav-number">3.</span> <span class="nav-text">2.工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-如何执行"><span class="nav-number">4.</span> <span class="nav-text">3.如何执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-常用语句，内建变量，内建函数"><span class="nav-number">5.</span> <span class="nav-text">4.常用语句，内建变量，内建函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-实例"><span class="nav-number">6.</span> <span class="nav-text">5.实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-参考资料"><span class="nav-number">7.</span> <span class="nav-text">6.参考资料</span></a></li></ol></div>
             
 
           </div>
