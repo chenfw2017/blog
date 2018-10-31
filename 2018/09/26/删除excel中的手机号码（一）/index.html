@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="简介sed(stream editor,流编辑器)，本质是一个面向字符流的非交互式文本编辑器。功能强大，可以用几行代码完成复杂的编辑任务。 工作原理sed维护了两个缓冲区：  模式空间（the active pattern space） 保持空间（the auxiliary hold space）   从输入流读入第一行，移除换行符，放到pattern space 执行命令，命令前可由地址筛选 除">
+<meta name="description" content="脚本需求说明有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。 实现思路仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。 代码">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sed学习笔记">
-<meta property="og:url" content="https://chenfw2017.github.io/2018/08/23/sed学习笔记/index.html">
+<meta property="og:title" content="删除excel中的手机号码（二）">
+<meta property="og:url" content="https://chenfw2017.github.io/2018/09/26/删除excel中的手机号码（一）/index.html">
 <meta property="og:site_name" content="小陈陈的博客">
-<meta property="og:description" content="简介sed(stream editor,流编辑器)，本质是一个面向字符流的非交互式文本编辑器。功能强大，可以用几行代码完成复杂的编辑任务。 工作原理sed维护了两个缓冲区：  模式空间（the active pattern space） 保持空间（the auxiliary hold space）   从输入流读入第一行，移除换行符，放到pattern space 执行命令，命令前可由地址筛选 除">
+<meta property="og:description" content="脚本需求说明有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。 实现思路仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。 代码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-27T03:44:59.770Z">
+<meta property="og:updated_time" content="2018-10-31T02:22:29.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sed学习笔记">
-<meta name="twitter:description" content="简介sed(stream editor,流编辑器)，本质是一个面向字符流的非交互式文本编辑器。功能强大，可以用几行代码完成复杂的编辑任务。 工作原理sed维护了两个缓冲区：  模式空间（the active pattern space） 保持空间（the auxiliary hold space）   从输入流读入第一行，移除换行符，放到pattern space 执行命令，命令前可由地址筛选 除">
+<meta name="twitter:title" content="删除excel中的手机号码（二）">
+<meta name="twitter:description" content="脚本需求说明有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。 实现思路仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。 代码">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://chenfw2017.github.io/2018/08/23/sed学习笔记/"/>
+  <link rel="canonical" href="https://chenfw2017.github.io/2018/09/26/删除excel中的手机号码（一）/"/>
 
 
 
 
 
-  <title>sed学习笔记 | 小陈陈的博客</title>
+  <title>删除excel中的手机号码（二） | 小陈陈的博客</title>
   
 
 
@@ -242,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chenfw2017.github.io/2018/08/23/sed学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://chenfw2017.github.io/2018/09/26/删除excel中的手机号码（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chen Fang Wei">
@@ -259,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">sed学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">删除excel中的手机号码（二）</h1>
         
 
         <div class="post-meta">
@@ -271,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T09:32:37+08:00">
-                2018-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T10:04:01+08:00">
+                2018-09-26
               </time>
             
 
@@ -309,95 +310,10 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>sed(stream editor,流编辑器)，本质是一个面向字符流的非交互式文本编辑器。功能强大，可以用几行代码完成复杂的编辑任务。</p>
-<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><p>sed维护了两个缓冲区：</p>
-<ul>
-<li>模式空间（the active pattern space）</li>
-<li>保持空间（the auxiliary hold space）</li>
-</ul>
-<ol>
-<li>从输入流读入第一行，移除换行符，放到pattern space</li>
-<li>执行命令，命令前可由地址筛选</li>
-<li>除非使用-n选项，默认会打印pattern space的内容到 output stream,加上被移除的换行符。</li>
-<li>开始下个循环，回到1 读取下一行，直到所有行处理完成。</li>
-</ol>
-<h2 id="常用基本命令"><a href="#常用基本命令" class="headerlink" title="常用基本命令"></a>常用基本命令</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>s</td>
-<td>替换</td>
-</tr>
-<tr>
-<td>d</td>
-<td>删除模式空间，并会读取下一行</td>
-</tr>
-<tr>
-<td>n</td>
-<td>读取下一行，会替换掉原模式空间的行</td>
-</tr>
-<tr>
-<td>p</td>
-<td>打印</td>
-</tr>
-<tr>
-<td>a</td>
-<td>追加</td>
-</tr>
-<tr>
-<td>i</td>
-<td>插入</td>
-</tr>
-</tbody>
-</table>
-<h2 id="高级命令"><a href="#高级命令" class="headerlink" title="高级命令"></a>高级命令</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>D</td>
-<td>只删除多行模式空间的第一行，不会读到新的内容</td>
-</tr>
-<tr>
-<td>N</td>
-<td>读取新的行，添加到模式空间现有内容之后</td>
-</tr>
-<tr>
-<td>P</td>
-<td>多行打印，只打印第一行</td>
-</tr>
-<tr>
-<td>h,H</td>
-<td>模式空间的内容，复制或追加到保持空间</td>
-</tr>
-<tr>
-<td>g,G</td>
-<td>保持空间的内容，复制或追加到模式空间</td>
-</tr>
-<tr>
-<td>x</td>
-<td>交换模式空间和保持空间的内容</td>
-</tr>
-</tbody>
-</table>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ul>
-<li>打印奇数行 <code>sed -n &#39;p;n&#39; file</code></li>
-<li>打印偶数行 <code>sed -n &#39;n;p&#39; file</code></li>
-<li><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2></li>
-<li>《sed与awk》 第三版 Dale Dougherty &amp; Arnold Robbins 著 张旭东 等译。</li>
-<li><a href="https://www.gnu.org/software/sed/manual/sed.html" target="_blank" rel="noopener">sed官方文档</a></li>
-<li><a href="http://blog.jobbole.com/109088/" target="_blank" rel="noopener">三十分钟学会sed</a></li>
-<li><a href="http://www.cnblogs.com/ctaixw/p/5860221.html" target="_blank" rel="noopener">sed命令详解</a></li>
-</ul>
+        <h2 id="脚本需求说明"><a href="#脚本需求说明" class="headerlink" title="脚本需求说明"></a>脚本需求说明</h2><p>有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。</p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Private Declare Function MessageBoxTimeout Lib &quot;user32&quot; Alias &quot;MessageBoxTimeoutA&quot; (ByVal hwnd As Long, ByVal lpText As String, ByVal lpCaption As String, ByVal wType As Long, ByVal wlange As Long, ByVal dwTimeout As Long) As Long</span><br><span class="line"></span><br><span class="line">Sub main()</span><br><span class="line">    Dim C, X, Y</span><br><span class="line">    MsgBox2 (&quot;开始删除...&quot;)</span><br><span class="line">    C = getCell()</span><br><span class="line">    X = C(0)</span><br><span class="line">    Y = C(1)</span><br><span class="line">    Call process(X, Y)</span><br><span class="line">    MsgBox (&quot;已删除完成，请确认后保存！&quot;)</span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">&apos;在当前活动工作簿的第一张sheet的前两行找到“投诉内容”的单元格</span><br><span class="line">&apos;返回值为数组：[0]为行，[1]为列</span><br><span class="line">Function getCell()</span><br><span class="line">    For Each cell In ActiveWorkbook.Worksheets(1).Range(&quot;a1:az2&quot;)</span><br><span class="line">        If cell.Value = &quot;投诉内容&quot; Then getCell = Array(cell.Row, cell.Column): Exit For</span><br><span class="line">    Next</span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">&apos; 后期绑定vb正则对象，调用replace()方法把手机号去掉</span><br><span class="line">Function process(X, Y)</span><br><span class="line">    Dim re, lastRow</span><br><span class="line">    lastRow = Cells(Rows.Count, Y).End(xlUp).Row   &apos;最后非空一行</span><br><span class="line">    Set re = CreateObject(&quot;VBscript.RegExp&quot;)</span><br><span class="line">    re.Global = True</span><br><span class="line">    re.Pattern = &quot;1[3-9]\d&#123;9&#125;[,，.。/、\\]?&quot;   &apos;手机号，及后面可能出现的一个字符</span><br><span class="line">    For Each cell In ActiveWorkbook.Worksheets(1).Range(Cells(X + 1, Y), Cells(lastRow, Y))  &apos;下一行开始处理到最后一行</span><br><span class="line">        cell.Value = re.Replace(Replace(Trim(cell), vbCrLf, &quot;&quot;), &quot;&quot;) &apos;先去空，再去回车，再去re去手机号，最后设置cell的值</span><br><span class="line">    Next</span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">&apos;1000以毫秒作为单位</span><br><span class="line">Sub MsgBox2(str)</span><br><span class="line">   MessageBoxTimeout 0, str, &quot;&quot;, 0, 0, 1000</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>可以把此段vba另存为.xlam的加载宏文件，放在<code>C:\Users\用户名\AppData\Roaming\Microsoft\AddIns</code> 目录下，excel启用这个加载宏，并可以把它自定义到 快速访问工具栏，这样每次打开文档都会加载这段vba,并可以直接使用。</p>
 
       
     </div>
@@ -413,6 +329,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
 
       
       
@@ -422,8 +344,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/17/gawk/" rel="next" title="gawk学习笔记">
-                <i class="fa fa-chevron-left"></i> gawk学习笔记
+              <a href="/2018/08/23/sed学习笔记/" rel="next" title="sed学习笔记">
+                <i class="fa fa-chevron-left"></i> sed学习笔记
               </a>
             
           </div>
@@ -431,10 +353,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/26/删除excel中的手机号码（一）/" rel="prev" title="删除excel中的手机号码（二）">
-                删除excel中的手机号码（二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,7 +475,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作原理"><span class="nav-number">2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用基本命令"><span class="nav-number">3.</span> <span class="nav-text">常用基本命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级命令"><span class="nav-number">4.</span> <span class="nav-text">高级命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">5.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本需求说明"><span class="nav-number">1.</span> <span class="nav-text">脚本需求说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">2.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">4.</span> <span class="nav-text">应用</span></a></li></ol></div>
             
 
           </div>
