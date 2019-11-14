@@ -242,6 +242,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chenfw2017.github.io/2019/11/12/20191112144747/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Fang Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小陈陈的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/12/20191112144747/" itemprop="url">Linux的sort总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T14:47:47+08:00">
+                2019-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>linux下的排序操作离不开sort,总结一下易用错的地方。</p>
+<h2 id="主要选项"><a href="#主要选项" class="headerlink" title="主要选项"></a>主要选项</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-b：寻找排序的keys时忽略前导的空白字符（blank）</span><br><span class="line">-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序</span><br><span class="line">-d：只处理英文字母、数字及空格，忽略其他的字符</span><br><span class="line">-h：使用易读性数字(例如:2K、1G)</span><br><span class="line">-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符(忽略无法打印的字符如退格/换页键/回车)</span><br><span class="line">-k：指定要用来排序的位置</span><br><span class="line">-m：将几个排序好的文件进行合并，只是单纯合并，不做排序</span><br><span class="line">-M：将前面3个字母依照月份的缩写进行排序</span><br><span class="line">-n：依照数值的大小排序</span><br><span class="line">-r：降序</span><br><span class="line">-u：忽略相同行</span><br><span class="line">-t&lt;分隔字符&gt;：指定分隔符，默认的分隔符为空白字符和非空白字符之间的空字符</span><br></pre></td></tr></table></figure>
+<h2 id="常用且易错的用法"><a href="#常用且易错的用法" class="headerlink" title="常用且易错的用法"></a>常用且易错的用法</h2><h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><p>和其它常见的linux工具不同的是，默认的分隔符是 非空白字符(non-blank charactor)和空白字符（blank charactor） 和之间的空字符串（empty string “”）（一定是前面是非空白，后面是空白之间的）<br>如：<code>&quot;  foo  bar&quot;</code> 默认分成两段 <code>&quot;  foo&quot;</code>  和<code>&quot; bar&quot;</code>，注意前面有空格。<br>明确这点很重要，会引出-b的使用。</p>
+<h3 id="b选项"><a href="#b选项" class="headerlink" title="-b选项"></a>-b选项</h3><p>sort如不指定-k,默认的keys就是整行。-b可以忽略key前导的空白字符（默认就是空格和Tab） 。</p>
+<h3 id="k选项"><a href="#k选项" class="headerlink" title="-k选项"></a>-k选项</h3><p><code>-k pos1[,pos2]</code><br>指定要排序的keys的位置，如果结束位置忽略，就一直到整行的结尾，所以不建议随意省略结束位置<br>开始和结束位置都是这样的格式：<code>f[.c][opts]</code><br>f是区段号，从1开始<br>.c是区段开始的第几个字符，从1开始<br>如果.c在开始区段时省略，则从第1个字符开始;如果.c在结束区段时省略，相当于默认设置的0，一直到区段的结尾。<br><code>opts</code> 是选项 <code>MbdfghinRrV</code> ,每个key都可以有不同的选项，会覆盖全局的选项（只要为key指定一个选项,全局的选项对该key就会失效）<br>除了-b选项，其它选项写在开始位置 或 结束位置 是等价的。<br>如： <code>-k 2n,2 or -k 2n,2n 和-k 2,2n</code> 是等价的。<br>可以指定多个-k ，先按最前的-k排序，再按后面的-k排序。</p>
+<h3 id="n-选项"><a href="#n-选项" class="headerlink" title="-n 选项"></a>-n 选项</h3><p>只识别 -（负号），数字，千位分隔符，小数点。  不识别+号，指数符e,字母<br>如果-n 跨区段比较（肯定有区段间的分隔符），或碰到不识别的会立即停止往后寻找key。</p>
+<h3 id="–debug"><a href="#–debug" class="headerlink" title="–debug"></a>–debug</h3><p>可以直观看到排序的keys</p>
+<h3 id="s-选项"><a href="#s-选项" class="headerlink" title="-s 选项"></a>-s 选项</h3><p>sort默认有 最后排序（last-resort comparison），按整行的ascii顺序排序，可能会使结果不稳定。<br>加-s 选项会阻止最后排序，使结果稳定。<br>-u选项也会阻止最后排序</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html" target="_blank" rel="noopener">GNU sort</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chenfw2017.github.io/2019/01/12/个人所得税计算器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1415,7 +1543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1428,7 +1556,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
