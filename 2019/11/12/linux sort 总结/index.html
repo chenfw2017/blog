@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python," />
+  <meta name="keywords" content="linux,sort," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="脚本需求说明有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。 实现思路仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。 代码">
-<meta name="keywords" content="python">
+<meta name="description" content="简介linux下的排序操作离不开sort,总结一下易用错的地方。 主要选项123456789101112-b：寻找排序的keys时忽略前导的空白字符（blank）-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序-d：只处理英文字母、数字及空格，忽略其他的字符-h：使用易读性数字(例如:2K、1G)-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符">
+<meta name="keywords" content="linux,sort">
 <meta property="og:type" content="article">
-<meta property="og:title" content="删除excel中的手机号码（二）">
-<meta property="og:url" content="https://chenfw2017.github.io/2018/09/26/删除excel中的手机号码（一）/index.html">
+<meta property="og:title" content="Linux的sort总结">
+<meta property="og:url" content="https://chenfw2017.github.io/2019/11/12/linux sort 总结/index.html">
 <meta property="og:site_name" content="小陈陈的博客">
-<meta property="og:description" content="脚本需求说明有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。 实现思路仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。 代码">
+<meta property="og:description" content="简介linux下的排序操作离不开sort,总结一下易用错的地方。 主要选项123456789101112-b：寻找排序的keys时忽略前导的空白字符（blank）-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序-d：只处理英文字母、数字及空格，忽略其他的字符-h：使用易读性数字(例如:2K、1G)-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-31T02:22:29.122Z">
+<meta property="og:updated_time" content="2020-02-18T05:50:35.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="删除excel中的手机号码（二）">
-<meta name="twitter:description" content="脚本需求说明有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。 实现思路仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。 代码">
+<meta name="twitter:title" content="Linux的sort总结">
+<meta name="twitter:description" content="简介linux下的排序操作离不开sort,总结一下易用错的地方。 主要选项123456789101112-b：寻找排序的keys时忽略前导的空白字符（blank）-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序-d：只处理英文字母、数字及空格，忽略其他的字符-h：使用易读性数字(例如:2K、1G)-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://chenfw2017.github.io/2018/09/26/删除excel中的手机号码（一）/"/>
+  <link rel="canonical" href="https://chenfw2017.github.io/2019/11/12/linux sort 总结/"/>
 
 
 
 
 
-  <title>删除excel中的手机号码（二） | 小陈陈的博客</title>
+  <title>Linux的sort总结 | 小陈陈的博客</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chenfw2017.github.io/2018/09/26/删除excel中的手机号码（一）/">
+    <link itemprop="mainEntityOfPage" href="https://chenfw2017.github.io/2019/11/12/linux sort 总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chen Fang Wei">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">删除excel中的手机号码（二）</h1>
+          <h1 class="post-title" itemprop="name headline">Linux的sort总结</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T10:04:01+08:00">
-                2018-09-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T14:47:47+08:00">
+                2019-11-12
               </time>
             
 
@@ -282,6 +282,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -310,10 +332,15 @@
       
 
       
-        <h2 id="脚本需求说明"><a href="#脚本需求说明" class="headerlink" title="脚本需求说明"></a>脚本需求说明</h2><p>有一excel文件从某crm系统导出，某目标列中含有有效文字+客户手机号码（手机号码个数可能有多个，位置不定，中间可能有,.\等分隔符分隔），现考虑隐私要求删除手机号码（及无用分隔符空白符等）。数据行数在2000行左右。</p>
-<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>仍然是正则表达式匹配11位手机号，但这次不用python了，直接用excel的vba来完成，无需任何第三方环境。之前都没学过vba,边查资料边写出来了。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Private Declare Function MessageBoxTimeout Lib &quot;user32&quot; Alias &quot;MessageBoxTimeoutA&quot; (ByVal hwnd As Long, ByVal lpText As String, ByVal lpCaption As String, ByVal wType As Long, ByVal wlange As Long, ByVal dwTimeout As Long) As Long</span><br><span class="line"></span><br><span class="line">Sub main()</span><br><span class="line">    Dim C, X, Y</span><br><span class="line">    MsgBox2 (&quot;开始删除...&quot;)</span><br><span class="line">    C = getCell()</span><br><span class="line">    X = C(0)</span><br><span class="line">    Y = C(1)</span><br><span class="line">    Call process(X, Y)</span><br><span class="line">    MsgBox (&quot;已删除完成，请确认后保存！&quot;)</span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">&apos;在当前活动工作簿的第一张sheet的前两行找到“投诉内容”的单元格</span><br><span class="line">&apos;返回值为数组：[0]为行，[1]为列</span><br><span class="line">Function getCell()</span><br><span class="line">    For Each cell In ActiveWorkbook.Worksheets(1).Range(&quot;a1:az2&quot;)</span><br><span class="line">        If cell.Value = &quot;投诉内容&quot; Then getCell = Array(cell.Row, cell.Column): Exit For</span><br><span class="line">    Next</span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">&apos; 后期绑定vb正则对象，调用replace()方法把手机号去掉</span><br><span class="line">Function process(X, Y)</span><br><span class="line">    Dim re, lastRow</span><br><span class="line">    lastRow = Cells(Rows.Count, Y).End(xlUp).Row   &apos;最后非空一行</span><br><span class="line">    Set re = CreateObject(&quot;VBscript.RegExp&quot;)</span><br><span class="line">    re.Global = True</span><br><span class="line">    re.Pattern = &quot;1[3-9]\d&#123;9&#125;[,，.。/、\\]?&quot;   &apos;手机号，及后面可能出现的一个字符</span><br><span class="line">    For Each cell In ActiveWorkbook.Worksheets(1).Range(Cells(X + 1, Y), Cells(lastRow, Y))  &apos;下一行开始处理到最后一行</span><br><span class="line">        cell.Value = re.Replace(Replace(Trim(cell), vbCrLf, &quot;&quot;), &quot;&quot;) &apos;先去空，再去回车，再去re去手机号，最后设置cell的值</span><br><span class="line">    Next</span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">&apos;1000以毫秒作为单位</span><br><span class="line">Sub MsgBox2(str)</span><br><span class="line">   MessageBoxTimeout 0, str, &quot;&quot;, 0, 0, 1000</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>可以把此段vba另存为.xlam的加载宏文件，放在<code>C:\Users\用户名\AppData\Roaming\Microsoft\AddIns</code> 目录下，excel启用这个加载宏，并可以把它自定义到 快速访问工具栏，这样每次打开文档都会加载这段vba,并可以直接使用。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>linux下的排序操作离不开sort,总结一下易用错的地方。</p>
+<h2 id="主要选项"><a href="#主要选项" class="headerlink" title="主要选项"></a>主要选项</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-b：寻找排序的keys时忽略前导的空白字符（blank）</span><br><span class="line">-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序</span><br><span class="line">-d：只处理英文字母、数字及空格，忽略其他的字符</span><br><span class="line">-h：使用易读性数字(例如:2K、1G)</span><br><span class="line">-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符(忽略无法打印的字符如退格/换页键/回车)</span><br><span class="line">-k：指定要用来排序的位置</span><br><span class="line">-m：将几个排序好的文件进行合并，只是单纯合并，不做排序</span><br><span class="line">-M：将前面3个字母依照月份的缩写进行排序</span><br><span class="line">-n：依照数值的大小排序</span><br><span class="line">-r：降序</span><br><span class="line">-u：忽略相同行</span><br><span class="line">-t&lt;分隔字符&gt;：指定分隔符，默认的分隔符为空白字符和非空白字符之间的空字符</span><br></pre></td></tr></table></figure>
+<h2 id="常用且易错的用法"><a href="#常用且易错的用法" class="headerlink" title="常用且易错的用法"></a>常用且易错的用法</h2><h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><p>和其它常见的linux工具不同的是，默认的分隔符是 非空白字符(non-blank charactor)和空白字符（blank charactor） 和之间的空字符串（empty string “”）（一定是前面是非空白，后面是空白之间的）<br>如：<code>&quot;  foo  bar&quot;</code> 默认分成两段 <code>&quot;  foo&quot;</code>  和<code>&quot; bar&quot;</code>，注意前面有空格。<br>明确这点很重要，会引出-b的使用。</p>
+<h3 id="b选项"><a href="#b选项" class="headerlink" title="-b选项"></a>-b选项</h3><p>sort如不指定-k,默认的keys就是整行。-b可以忽略key前导的空白字符（默认就是空格和Tab） 。</p>
+<h3 id="k选项"><a href="#k选项" class="headerlink" title="-k选项"></a>-k选项</h3><p><code>-k pos1[,pos2]</code><br>指定要排序的keys的位置，如果结束位置忽略，就一直到整行的结尾，所以不建议随意省略结束位置<br>开始和结束位置都是这样的格式：<code>f[.c][opts]</code><br>f是区段号，从1开始<br>.c是区段开始的第几个字符，从1开始<br>如果.c在开始区段时省略，则从第1个字符开始;如果.c在结束区段时省略，相当于默认设置的0，一直到区段的结尾。<br><code>opts</code> 是选项 <code>MbdfghinRrV</code> ,每个key都可以有不同的选项，会覆盖全局的选项（只要为key指定一个选项,全局的选项对该key就会失效）<br>除了-b选项，其它选项写在开始位置 或 结束位置 是等价的。<br>如： <code>-k 2n,2 or -k 2n,2n 和-k 2,2n</code> 是等价的。<br>可以指定多个-k ，先按最前的-k排序，再按后面的-k排序。</p>
+<h3 id="n-选项"><a href="#n-选项" class="headerlink" title="-n 选项"></a>-n 选项</h3><p>只识别 -（负号），数字，千位分隔符，小数点。  不识别+号，指数符e,字母<br>如果-n 跨区段比较（肯定有区段间的分隔符），或碰到不识别的会立即停止往后寻找key。</p>
+<h3 id="–debug"><a href="#–debug" class="headerlink" title="–debug"></a>–debug</h3><p>可以直观看到排序的keys</p>
+<h3 id="s-选项"><a href="#s-选项" class="headerlink" title="-s 选项"></a>-s 选项</h3><p>sort默认有 最后排序（last-resort comparison），按整行的ascii顺序排序，可能会使结果不稳定。<br>加-s 选项会阻止最后排序，使结果稳定。<br>-u选项也会阻止最后排序</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html" target="_blank" rel="noopener">GNU sort</a></p>
 
       
     </div>
@@ -331,7 +358,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/linux-sort/" rel="tag"># linux,sort</a>
           
         </div>
       
@@ -344,8 +371,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/25/删除excel中的手机号码（二）/" rel="next" title="删除excel中的手机号码（一）">
-                <i class="fa fa-chevron-left"></i> 删除excel中的手机号码（一）
+              <a href="/2019/01/12/个人所得税计算器/" rel="next" title="个人所得税计算器">
+                <i class="fa fa-chevron-left"></i> 个人所得税计算器
               </a>
             
           </div>
@@ -353,10 +380,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/12/个人所得税计算器/" rel="prev" title="个人所得税计算器">
-                个人所得税计算器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -440,6 +463,15 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
               
@@ -479,7 +511,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本需求说明"><span class="nav-number">1.</span> <span class="nav-text">脚本需求说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">2.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">4.</span> <span class="nav-text">应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要选项"><span class="nav-number">2.</span> <span class="nav-text">主要选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用且易错的用法"><span class="nav-number">3.</span> <span class="nav-text">常用且易错的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分隔符"><span class="nav-number">3.1.</span> <span class="nav-text">分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b选项"><span class="nav-number">3.2.</span> <span class="nav-text">-b选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k选项"><span class="nav-number">3.3.</span> <span class="nav-text">-k选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-选项"><span class="nav-number">3.4.</span> <span class="nav-text">-n 选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#–debug"><span class="nav-number">3.5.</span> <span class="nav-text">–debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#s-选项"><span class="nav-number">3.6.</span> <span class="nav-text">-s 选项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -499,7 +531,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
