@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="0.简介正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。 1">
+<meta name="description" content="简介正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。 元字符">
 <meta name="keywords" content="正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式笔记">
 <meta property="og:url" content="https://chenfw2017.github.io/2018/08/10/正则表达式笔记/index.html">
 <meta property="og:site_name" content="小陈陈的博客">
-<meta property="og:description" content="0.简介正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。 1">
+<meta property="og:description" content="简介正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。 元字符">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-02-18T04:11:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式笔记">
-<meta name="twitter:description" content="0.简介正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。 1">
+<meta name="twitter:description" content="简介正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。 元字符">
 
 
 
@@ -332,8 +332,8 @@
       
 
       
-        <h2 id="0-简介"><a href="#0-简介" class="headerlink" title="0.简介"></a>0.简介</h2><p>正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。</p>
-<h2 id="1-元字符"><a href="#1-元字符" class="headerlink" title="1.元字符"></a>1.元字符</h2><h3 id="字符组"><a href="#字符组" class="headerlink" title="字符组"></a>字符组</h3><ul>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>正则表达式(Regular Expression ,re,regex)。个人理解就是是一种匹配的模式（pattern）,可以用来匹配符合pattern的字符串。本身就是用特殊的字符串和语法规则来书写。常见语言c#,java,python,vb,php等都支持，基本语法类似，但细节上和支持的元字符有所不同。Linux下的文本处理工具sed,awk(gawk),grep都会用到正则表达式。</p>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><h3 id="字符组"><a href="#字符组" class="headerlink" title="字符组"></a>字符组</h3><ul>
 <li>[] 表示匹配这一系列字符集合中的任一个</li>
 <li>\d 数字，等价于[0-9]</li>
 <li>\w 数字，字母 ，等价于[0-9a-zA-Z]</li>
@@ -353,11 +353,11 @@
 <li><strong>$</strong> 结尾位置</li>
 <li><strong>\b</strong> 单词边界</li>
 </ul>
-<h2 id="2-分组"><a href="#2-分组" class="headerlink" title="2.分组"></a>2.分组</h2><ul>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><ul>
 <li>（exp） 括号里面的叫分组，也叫子表达式，子模式，可以看做一个整体。</li>
 <li>分组可以后向引用， 从\1,\2…开始。</li>
 </ul>
-<h2 id="3-环视（look-around）"><a href="#3-环视（look-around）" class="headerlink" title="3.环视（look around）"></a>3.环视（look around）</h2><table>
+<h2 id="环视（look-around）"><a href="#环视（look-around）" class="headerlink" title="环视（look around）"></a>环视（look around）</h2><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -384,11 +384,11 @@
 </tbody>
 </table>
 <p>这些()里的分组都是不捕获的，可以理解为自定义的边界,只匹配位置。<br>这几个名字不好记，翻译成中文叫啥的都有（环视，预查，零宽断言）。<br>简单记忆：=是要匹配的（肯定），！是不能匹配的（否定），&lt;是从右往左（逆序，反向,behind），没有&lt; 是正则默认的从左往右（顺序，正向，ahead）。<br>注：以肯定顺序环视为例，常见的写法是 <code>/pattern/(?=exp)</code>  表示要匹配的pattern右边是子表达式匹配的位置。<br>但也可以这么用  <code>(?=exp)/pattern/</code><br>文本： <code>jack2007jac</code><br>正则 <code>(?=jack2007)jack</code> 可以匹配出jack<br>用<code>jack(?=2007)</code>  一样匹配出jack</p>
-<h2 id="4-Mode"><a href="#4-Mode" class="headerlink" title="4.Mode"></a>4.Mode</h2><p>匹配模式(这里不是pattern)，可理解为 匹配时有哪些选项。包括: 不区分大小写，单行（DOTALL）模式 等。<br>结构是(?modifier),写在整个表达式的开头处。<br>(?i) 表示不区分大小写<br>(?s) 单行模式（点号通配），此时.可以匹配\n<br>(?m) 多行模式（和单行模式没关系），影响的是^$,匹配行的开始和结束</p>
-<h2 id="5-Unicode"><a href="#5-Unicode" class="headerlink" title="5.Unicode"></a>5.Unicode</h2><h3 id="5-1匹配unicode代码值：如”我”"><a href="#5-1匹配unicode代码值：如”我”" class="headerlink" title="5.1匹配unicode代码值：如”我”"></a>5.1匹配unicode代码值：如”我”</h3><p>python: <strong>\u6211</strong><br>php: <strong>\x{6211}</strong><br>匹配中文: [\u4e00-\u9fff] (CJK统一表意符号)</p>
-<h3 id="5-2-Unicode属性"><a href="#5-2-Unicode属性" class="headerlink" title="5.2 Unicode属性"></a>5.2 Unicode属性</h3><p>三种属性：<br>1.<strong>Unicode Property</strong>  功能，是标点，字母，符号？ 而不关心是哪种语言的字符。<strong>\p{n}</strong>表示各种书写系统中的数字。<br>2.<strong>Unicode Block</strong> 所属代码区块，如控制字符和基本拉丁语<strong>\p{InBasic_Latin}</strong>, <strong>\u0000-\uFFFF</strong> 一共有105个区块。<br>3.<strong>Unicdoe Script</strong> 书写系统，是英文，中文，阿拉伯文？如 <strong>\p{Han}</strong>表示汉语（中文字符）</p>
+<h2 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h2><p>匹配模式(这里不是pattern)，可理解为 匹配时有哪些选项。包括: 不区分大小写，单行（DOTALL）模式 等。<br>结构是(?modifier),写在整个表达式的开头处。<br>(?i) 表示不区分大小写<br>(?s) 单行模式（点号通配），此时.可以匹配\n<br>(?m) 多行模式（和单行模式没关系），影响的是^$,匹配行的开始和结束</p>
+<h2 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h2><h3 id="匹配unicode代码值：如”我”"><a href="#匹配unicode代码值：如”我”" class="headerlink" title="匹配unicode代码值：如”我”"></a>匹配unicode代码值：如”我”</h3><p>python: <strong>\u6211</strong><br>php: <strong>\x{6211}</strong><br>匹配中文: [\u4e00-\u9fff] (CJK统一表意符号)</p>
+<h3 id="Unicode属性"><a href="#Unicode属性" class="headerlink" title="Unicode属性"></a>Unicode属性</h3><p>三种属性：<br>1.<strong>Unicode Property</strong>  功能，是标点，字母，符号？ 而不关心是哪种语言的字符。<strong>\p{n}</strong>表示各种书写系统中的数字。<br>2.<strong>Unicode Block</strong> 所属代码区块，如控制字符和基本拉丁语<strong>\p{InBasic_Latin}</strong>, <strong>\u0000-\uFFFF</strong> 一共有105个区块。<br>3.<strong>Unicdoe Script</strong> 书写系统，是英文，中文，阿拉伯文？如 <strong>\p{Han}</strong>表示汉语（中文字符）</p>
 <p>结构写法都是 <strong>\p{property}</strong>,部分编程语言不支持。python的标准库re不支持， perl,php支持。</p>
-<h2 id="6-正则实例："><a href="#6-正则实例：" class="headerlink" title="6.正则实例："></a>6.正则实例：</h2><style>table th:nth-of-type(1){width:25%;}table th:nth-of-type(2){width:80%;}</style>
+<h2 id="正则实例："><a href="#正则实例：" class="headerlink" title="正则实例："></a>正则实例：</h2><style>table th:nth-of-type(1){width:25%;}table th:nth-of-type(2){width:80%;}</style>
 
 <table>
 <thead>
@@ -416,19 +416,18 @@
 </tr>
 </tbody>
 </table>
-<h2 id="7-正则标准"><a href="#7-正则标准" class="headerlink" title="7.正则标准"></a>7.正则标准</h2><p>有许多的语言和工具都支持正则表达式，但是它们支持的标准不尽相同。</p>
+<h2 id="正则规范"><a href="#正则规范" class="headerlink" title="正则规范"></a>正则规范</h2><p>有许多的语言和工具都支持正则表达式，但是它们支持的标准不尽相同。</p>
+<ol>
+<li><p>POSIX规范：</p>
 <ul>
-<li><p>1.POSIX标准：</p>
-<ul>
-<li>BRE（基本正则表达式）： <code>（）{}</code>等元字符要加转义符</li>
-<li>ERE（扩展正则表达式）： 无需加转义<br>如sed/grep 默认使用的为BRE,grep -P使用下面的PCRE，awk默认使用的为 ERE</li>
-</ul>
-<ul>
-<li>2.PCRE（Perl Compatible Regular Expression）<br>PCRE可以认为是事实上的标准，来自于Perl,很多对正则的支持均移植于PCRE，常见的\d,\w,\s均来自于PCRE。</li>
+<li>BRE（基本正则表达式）： <code>（）{}</code> 等元字符要加转义符，不支持反向引用\1,\2，不支持量词+，？</li>
+<li>ERE（扩展正则表达式）： <code>（）{}</code> 无需加转义,量词+，?可以直接使用<br>如linux下的工具基本采用POSIX规范，sed/grep 默认使用的为BRE,grep -P使用下面的PCRE，awk默认使用的为 ERE<br>其实现在纯粹的BRE用的比较少了，GNU其实对这些工具都作了一定的扩展。</li>
 </ul>
 </li>
-</ul>
-<h2 id="8-参考资料"><a href="#8-参考资料" class="headerlink" title="8.参考资料"></a>8.参考资料</h2><ul>
+<li><p>PCRE（Perl Compatible Regular Expression）<br>PCRE可以认为是事实上的标准，来自于Perl,很多对正则的支持均移植于PCRE，常见的字符组\d,\w,\s均来自于PCRE。</p>
+</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://www.regular-expressions.info/" target="_blank" rel="noopener">regular-expressions</a> 这个网站的有相当全面的正则表达式的知识，例子，参考。</li>
 <li><a href="http://deerchao.net/tutorials/regex/common.htm" target="_blank" rel="noopener">常用正则表达式</a></li>
 <li><a href="https://jex.im/regulex/#!flags=&re=%5E\(a%7Cb\)*%3F%24" target="_blank" rel="noopener">JavaScript Regular Expression Visualizer</a></li>
@@ -611,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-简介"><span class="nav-number">1.</span> <span class="nav-text">0.简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-元字符"><span class="nav-number">2.</span> <span class="nav-text">1.元字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符组"><span class="nav-number">2.1.</span> <span class="nav-text">字符组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#量词"><span class="nav-number">2.2.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它元字符"><span class="nav-number">2.3.</span> <span class="nav-text">其它元字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-分组"><span class="nav-number">3.</span> <span class="nav-text">2.分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-环视（look-around）"><span class="nav-number">4.</span> <span class="nav-text">3.环视（look around）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Mode"><span class="nav-number">5.</span> <span class="nav-text">4.Mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Unicode"><span class="nav-number">6.</span> <span class="nav-text">5.Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1匹配unicode代码值：如”我”"><span class="nav-number">6.1.</span> <span class="nav-text">5.1匹配unicode代码值：如”我”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-Unicode属性"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 Unicode属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-正则实例："><span class="nav-number">7.</span> <span class="nav-text">6.正则实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-正则标准"><span class="nav-number">8.</span> <span class="nav-text">7.正则标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-参考资料"><span class="nav-number">9.</span> <span class="nav-text">8.参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">2.</span> <span class="nav-text">元字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符组"><span class="nav-number">2.1.</span> <span class="nav-text">字符组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#量词"><span class="nav-number">2.2.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它元字符"><span class="nav-number">2.3.</span> <span class="nav-text">其它元字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">3.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环视（look-around）"><span class="nav-number">4.</span> <span class="nav-text">环视（look around）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mode"><span class="nav-number">5.</span> <span class="nav-text">Mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unicode"><span class="nav-number">6.</span> <span class="nav-text">Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配unicode代码值：如”我”"><span class="nav-number">6.1.</span> <span class="nav-text">匹配unicode代码值：如”我”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode属性"><span class="nav-number">6.2.</span> <span class="nav-text">Unicode属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则实例："><span class="nav-number">7.</span> <span class="nav-text">正则实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则规范"><span class="nav-number">8.</span> <span class="nav-text">正则规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
