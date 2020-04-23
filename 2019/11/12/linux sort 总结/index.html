@@ -1,132 +1,52 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chenfw2017.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="linux,sort," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="简介linux下的排序操作离不开sort,总结一下易用错的地方。 主要选项123456789101112-b：寻找排序的keys时忽略前导的空白字符（blank）-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序-d：只处理英文字母、数字及空格，忽略其他的字符-h：使用易读性数字(例如:2K、1G)-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符">
+  <meta name="description" content="简介linux下的排序操作离不开sort,总结一下易用错的地方。 主要选项123456789101112-b：寻找排序的keys时忽略前导的空白字符（blank）-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序-d：只处理英文字母、数字及空格，忽略其他的字符-h：使用易读性数字(例如:2K、1G)-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符">
 <meta name="keywords" content="linux,sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux的sort总结">
 <meta property="og:url" content="https://chenfw2017.github.io/2019/11/12/linux sort 总结/index.html">
-<meta property="og:site_name" content="小陈陈的博客">
+<meta property="og:site_name" content="陈某某的网络日志">
 <meta property="og:description" content="简介linux下的排序操作离不开sort,总结一下易用错的地方。 主要选项123456789101112-b：寻找排序的keys时忽略前导的空白字符（blank）-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序-d：只处理英文字母、数字及空格，忽略其他的字符-h：使用易读性数字(例如:2K、1G)-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-18T05:50:35.948Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-22T07:57:58.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux的sort总结">
 <meta name="twitter:description" content="简介linux下的排序操作离不开sort,总结一下易用错的地方。 主要选项123456789101112-b：寻找排序的keys时忽略前导的空白字符（blank）-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序-d：只处理英文字母、数字及空格，忽略其他的字符-h：使用易读性数字(例如:2K、1G)-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符">
 
+<link rel="canonical" href="https://chenfw2017.github.io/2019/11/12/linux sort 总结/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
-
-
-  <link rel="canonical" href="https://chenfw2017.github.io/2019/11/12/linux sort 总结/"/>
-
-
-
-
-
-  <title>Linux的sort总结 | 小陈陈的博客</title>
+  <title>Linux的sort总结 | 陈某某的网络日志</title>
   
 
 
@@ -134,194 +54,143 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">小陈陈的博客</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">陈某某的网络日志</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">活到老学到老,学习无止境</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
+
+
+
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a>
 
-  
+  </li>
+  </ul>
 </nav>
 
 
 
- </div>
+
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://chenfw2017.github.io/2019/11/12/linux sort 总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Chen Fang Wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小陈陈的博客">
+      <meta itemprop="name" content="陈某某的网络日志">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Linux的sort总结</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Linux的sort总结
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T14:47:47+08:00">
-                2019-11-12
-              </time>
-            
+              <span class="post-meta-item-text">发表于</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
+              <time title="创建时间：2019-11-12 14:47:47" itemprop="dateCreated datePublished" datetime="2019-11-12T14:47:47+08:00">2019-11-12</time>
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -329,11 +198,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>linux下的排序操作离不开sort,总结一下易用错的地方。</p>
 <h2 id="主要选项"><a href="#主要选项" class="headerlink" title="主要选项"></a>主要选项</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-b：寻找排序的keys时忽略前导的空白字符（blank）</span><br><span class="line">-c：检查文件是否已经按照顺序排序，如未排序，会提示从哪一行开始乱序</span><br><span class="line">-d：只处理英文字母、数字及空格，忽略其他的字符</span><br><span class="line">-h：使用易读性数字(例如:2K、1G)</span><br><span class="line">-i：除了040至176之间的ASCII字符外(八进制0-177)，忽略其他的字符(忽略无法打印的字符如退格/换页键/回车)</span><br><span class="line">-k：指定要用来排序的位置</span><br><span class="line">-m：将几个排序好的文件进行合并，只是单纯合并，不做排序</span><br><span class="line">-M：将前面3个字母依照月份的缩写进行排序</span><br><span class="line">-n：依照数值的大小排序</span><br><span class="line">-r：降序</span><br><span class="line">-u：忽略相同行</span><br><span class="line">-t&lt;分隔字符&gt;：指定分隔符，默认的分隔符为空白字符和非空白字符之间的空字符</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="常用且易错的用法"><a href="#常用且易错的用法" class="headerlink" title="常用且易错的用法"></a>常用且易错的用法</h2><h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><p>和其它常见的linux工具不同的是，默认的分隔符是 非空白字符(non-blank charactor)和空白字符（blank charactor） 和之间的空字符串（empty string “”）（一定是前面是非空白，后面是空白之间的）<br>如：<code>&quot;  foo  bar&quot;</code> 默认分成两段 <code>&quot;  foo&quot;</code>  和<code>&quot; bar&quot;</code>，注意前面有空格。<br>明确这点很重要，会引出-b的使用。</p>
 <h3 id="b选项"><a href="#b选项" class="headerlink" title="-b选项"></a>-b选项</h3><p>sort如不指定-k,默认的keys就是整行。-b可以忽略key前导的空白字符（默认就是空格和Tab） 。</p>
 <h3 id="k选项"><a href="#k选项" class="headerlink" title="-k选项"></a>-k选项</h3><p><code>-k pos1[,pos2]</code><br>指定要排序的keys的位置，如果结束位置忽略，就一直到整行的结尾，所以不建议随意省略结束位置<br>开始和结束位置都是这样的格式：<code>f[.c][opts]</code><br>f是区段号，从1开始<br>.c是区段开始的第几个字符，从1开始<br>如果.c在开始区段时省略，则从第1个字符开始;如果.c在结束区段时省略，相当于默认设置的0，一直到区段的结尾。<br><code>opts</code> 是选项 <code>MbdfghinRrV</code> ,每个key都可以有不同的选项，会覆盖全局的选项（只要为key指定一个选项,全局的选项对该key就会失效）<br>除了-b选项，其它选项写在开始位置 或 结束位置 是等价的。<br>如： <code>-k 2n,2 or -k 2n,2n 和-k 2,2n</code> 是等价的。<br>可以指定多个-k ，先按最前的-k排序，再按后面的-k排序。</p>
@@ -342,254 +209,173 @@
 <h3 id="s-选项"><a href="#s-选项" class="headerlink" title="-s 选项"></a>-s 选项</h3><p>sort默认有 最后排序（last-resort comparison），按整行的ascii顺序排序，可能会使结果不稳定。<br>加-s 选项会阻止最后排序，使结果稳定。<br>-u选项也会阻止最后排序</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html" target="_blank" rel="noopener">GNU sort</a></p>
 
-      
     </div>
+
     
     
     
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/linux-sort/" rel="tag"># linux,sort</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/01/12/个人所得税计算器/" rel="next" title="个人所得税计算器">
-                <i class="fa fa-chevron-left"></i> 个人所得税计算器
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux-sort/" rel="tag"># linux,sort</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/01/12/个人所得税计算器/" rel="prev" title="个人所得税计算器">
+      <i class="fa fa-chevron-left"></i> 个人所得税计算器
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
           </div>
           
 
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Chen Fang Wei</p>
-              <p class="site-description motion-element" itemprop="description">记录点滴</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">8</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要选项"><span class="nav-number">2.</span> <span class="nav-text">主要选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用且易错的用法"><span class="nav-number">3.</span> <span class="nav-text">常用且易错的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分隔符"><span class="nav-number">3.1.</span> <span class="nav-text">分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b选项"><span class="nav-number">3.2.</span> <span class="nav-text">-b选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k选项"><span class="nav-number">3.3.</span> <span class="nav-text">-k选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-选项"><span class="nav-number">3.4.</span> <span class="nav-text">-n 选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#–debug"><span class="nav-number">3.5.</span> <span class="nav-text">–debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#s-选项"><span class="nav-number">3.6.</span> <span class="nav-text">-s 选项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Chen Fang Wei</span>
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要选项"><span class="nav-number">2.</span> <span class="nav-text">主要选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用且易错的用法"><span class="nav-number">3.</span> <span class="nav-text">常用且易错的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分隔符"><span class="nav-number">3.1.</span> <span class="nav-text">分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b选项"><span class="nav-number">3.2.</span> <span class="nav-text">-b选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k选项"><span class="nav-number">3.3.</span> <span class="nav-text">-k选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-选项"><span class="nav-number">3.4.</span> <span class="nav-text">-n 选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#–debug"><span class="nav-number">3.5.</span> <span class="nav-text">–debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#s-选项"><span class="nav-number">3.6.</span> <span class="nav-text">-s 选项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chen Fang Wei</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chenfw2017" title="GitHub → https://github.com/chenfw2017" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cfwyy77@163.com" title="E-Mail → mailto:cfwyy77@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chen Fang Wei</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
 
 
 
 
 
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -606,118 +392,8 @@
 
 
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
 
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
 
   
 
